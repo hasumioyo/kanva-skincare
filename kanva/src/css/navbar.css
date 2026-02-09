@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;    
+     width: 100%;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgb(250, 250, 250, 0.5);
+  /* border-bottom: 1px solid var(--primary); */
+}
+
+.navbar-brand {
+    display: flex;
+    gap: 10px;
+    
+}
+.navbar-nav {
+    display: flex;
+    gap: 30px;
+}
+
+/* Text navbar, logo title, icons and signin/up */
+.navbar .navbar-brand .logo-title {
+    color: var(--Olive-Dark); 
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: var( --font-size-l);
+}
+
+.navbar .navbar-nav .nav-text {
+    color: var(--Olive-Dark);
+    font-size: var(--font-size-m);
+}
+
+.navbar .navbar-sign {
+    display: flex;
+    gap: 8px;
+}
+
+.navbar .navbar-sign .nav-sign-button {
+    color: var(--Olive-Dark);
+    border: 100px ;
+    border-radius: var(--border-radius-circle);
+    border-color: var(--Olive-Dark);
+    
+}
+
