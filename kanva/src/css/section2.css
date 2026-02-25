@@ -1,0 +1,23 @@
+.section-content-2 {
+    display: flex;
+    flex-direction: column;
+    padding: 70px 20px;
+}
+
+.section-content-2 .section2-title {
+    font-size: var(--font-size-xl);
+    text-align: center;
+}
+
+.section-content-2 .section2-product {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-content-2 .section2-list-product {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 1295px;
+    align-self: center;
+}
