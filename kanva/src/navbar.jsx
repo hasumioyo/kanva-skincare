@@ -1,6 +1,6 @@
 // import { forwardRef } from "react";
 import { Link } from 'react-router-dom';
-import './css/navbar.css'
+import './css/navbar.css';
 
 
 const Navbar = () => {
@@ -34,4 +34,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export default Navbar;  

@@ -20,10 +20,15 @@
     height: 150px;
 }
 
-.product-small {
-    background-image:url('../assets/mockup.jpg');
-    width: 100px;
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.section-content-1 .cover-small {
+    width: 350px;
+    height: 125px;
+}
+
+.section-content-1 .cover-small .product-small {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0px -60px;
+    
 }

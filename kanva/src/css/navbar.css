@@ -9,7 +9,7 @@
 }
 
 .navbar-brand {
-    display: flex;
+    display: inline-flex;
     gap: 10px;
     
 }
@@ -47,7 +47,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30rem;
+    gap: 25rem;
 }
 
 .navbar .navbar-sign .nav-signbutton-1 {

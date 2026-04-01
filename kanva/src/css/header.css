@@ -8,6 +8,7 @@
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
 }
 
 .home-header .headers {
@@ -16,7 +17,7 @@
     align-items: end;
     position: relative;
     top: -15rem;
-    right: -60rem;
+    right: -50rem;
     gap: 8px;
 }
 
@@ -64,20 +65,30 @@
 }
 
 .home-header .new-product {
-    width: 560px;
+    /* width: 560px; */
     background-color: var(--50);
-    padding: 20px 15px;
+    padding: 0px 15px;
     border-radius: var(--border-radius-m);
     position: absolute;
-    top: 650px;
+    top: 580px;
+    display: inline-flex;
+    align-items: center;
+    /* height: 185px; */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.home-header .new-product .new-products {
+    margin-top: -70px;
 }
 
 .home-header .new-product .desc-new {
     display: inline-flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 2px;
     /* text-align: end; */
     /* align-items: end; */
+    padding: 15px 20px;
 }
 
 .home-header .new-product .desc-new .new-pro-title {
@@ -87,16 +98,17 @@
 }
 
 .home-header .new-product .desc-new .new-pro-desc {
-    font-size: var(--font-size-n);
+    font-size: var(--font-size-s);
     font-weight: var(--font-weight-normal);
     color: var(--900);
+    width: 330px;
 }
 
 .home-header .new-product .desc-new .buttons-right {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-left: 25rem;
+    margin-left: 15rem;
     
 }
 
@@ -112,4 +124,37 @@
     text-align: center;
     background-color: var(--50);
     align-items: end;
+}
+
+.home-header .social-media {
+    align-self: self-end;
+    margin-left: 45rem;
+
+}
+.home-header .social-media .social {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--Olive-Dark);
+    /* background-color: none; */
+    background: none;
+    border-radius: var(--border-radius-circle);
+    display: block;
+    margin-bottom: -15px;
+    
+}
+
+.home-header .social-media .social i {
+    font-size: var(--font-size-m);
+    color: var(--Olive-Dark);
+    text-align: center;
+}
+
+
+.home-header .social-media .a-line {
+    height: 300px;
+    width: 1px;
+    background-color: var(--Olive-Dark);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
