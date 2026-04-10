@@ -1,27 +1,31 @@
 // import { useState } from 'react'
 import Navbar from './navbar'
-import Header from './home/header';
-import Section1 from './home/section1';
-import Section2 from './home/section2';
-import Section3 from './home/section3';
-import Section4 from './home/section4';
-import Footer from './home/footer';
+import Home from './pages/home';
 import './App.css'
+import { BrowserRouter, useLocation, Routes, Route} from 'react-router-dom';
 
-function App() {
-  // const [count, setCount] = useState(0)
 
-  return (
+function Layout() {
+  const location = useLocation();
+  const hideNavbarRoutes = ["/auth", "/profile"];
+  const hideNavbar = hideNavbarRoutes.includes(location.pathname);
+
+   return (
     <>
-      <Navbar/>
-      <Header/>
-      <Section1/>
-      <Section2/>
-      <Section3/>
-      <Section4/>
-      <Footer/>
+      {!hideNavbar && <Navbar/>}
+      <Routes>
+        <Route path="/" element={<Home />}/>
+      </Routes>
     </>
   );
+}
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout/>
+    </BrowserRouter>
+  );
+
 }
 
 export default App;

@@ -1,12 +1,65 @@
 // import { forwardRef } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './css/navbar.css';
+import { useEffect, useRef } from 'react';
+import Header from "./home/header";
 
 
 const Navbar = () => {
+    const navbarRef = useRef(null);
+    const headerRef = useRef(null);
+    const locations = useLocation();
+
+    useEffect(() => {
+        const navbar = navbarRef.current;
+        const SectionOne = headerRef.current;
+
+        const SectionOneOptions = {
+            rootMargin: "-200px 0px 0px 0px",
+            "/": "-200px 0px 0px 0px",
+            "/shop": "-100px 0px 0px 0px",
+        }
+
+        const SectionOneObserver = new IntersectionObserver(function(entries) {
+        entries.forEach((entry) => {
+            console.log(entry.target);
+            if(!entry.isIntersecting) {
+                navbar.classList.add("navbar-scrolldown");
+            } else {
+                navbar.classList.remove("navbar-scrolldown");
+            }
+        });
+        
+    }, SectionOneOptions);
+        if (SectionOne) {
+            SectionOneObserver.observe(SectionOne);
+        };
+
+        return () => {
+            if (SectionOne) {
+                SectionOneObserver.unobserve(SectionOne);
+            }
+        };
+    }, [locations.pathname]);
+
+    const navbarsrunning = () => {
+        if (locations.pathname === "/") {
+            return <Header ref={headerRef}/>;
+        }
+        if (locations.pathname === "/shop") {
+            const colornavbar = document.querySelector('.navbar-scrolldown');
+            if(colornavbar) {
+                colornavbar.classList.add('whitening')
+            }
+            return <Header ref={headerRef}/>;
+        }
+        return null;
+    };
+
+
     return (
         <>
-        <nav className="navbar">
+        <nav className="navbar" ref={navbarRef}>
             <div className='nav-2'>
                 <div className="navbar-brand">
                     <a href="#logo" className='logo-title'>kanva</a>
@@ -30,6 +83,7 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
+        {navbarsrunning()}
         </>
     );
 }
