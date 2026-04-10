@@ -41,6 +41,7 @@
     text-align: center;
     height: 50px;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .home-header .header-button .button-header-name {
@@ -55,6 +56,7 @@
     background-color: var(--50);
     border-radius: var(--border-radius-circle);
     border-style: none;
+    
 }
 
 .home-header .header-button i {
@@ -68,9 +70,9 @@
     /* width: 560px; */
     background-color: var(--50);
     padding: 0px 15px;
-    border-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-mr);
     position: absolute;
-    top: 580px;
+    top: 540px;
     display: inline-flex;
     align-items: center;
     /* height: 185px; */
@@ -110,6 +112,7 @@
     gap: 10px;
     margin-left: 15rem;
     
+    
 }
 
 .home-header .new-product .desc-new .buttons-right .button-new-pro {
@@ -124,6 +127,13 @@
     text-align: center;
     background-color: var(--50);
     align-items: end;
+    cursor: pointer;
+}
+
+.home-header .new-product .desc-new .buttons-right .button-new-pro:hover {
+    background-color: var(--Olive-Dark);
+    color: var(--50);
+    transition: 0.2s ease;
 }
 
 .home-header .social-media {
@@ -131,6 +141,7 @@
     margin-left: 45rem;
 
 }
+
 .home-header .social-media .social {
     width: 40px;
     height: 40px;
@@ -140,8 +151,9 @@
     border-radius: var(--border-radius-circle);
     display: block;
     margin-bottom: -15px;
-    
+    cursor: pointer;
 }
+
 
 .home-header .social-media .social i {
     font-size: var(--font-size-m);

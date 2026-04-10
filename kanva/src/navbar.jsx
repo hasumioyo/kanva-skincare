@@ -78,8 +78,9 @@ const Navbar = () => {
                     
                 </div>
                 <div className='navbar-sign'>
+                    <p className='nav-icons'><i class="fa-regular fa-user"></i></p>
                     <p className='nav-signbutton-1'>Sign In</p>
-                    <p className='nav-signbutton-2'>Sign Up</p>
+                    {/* <p className='nav-signbutton-2'>Sign Up</p> */}
                 </div>
             </div>
         </nav>

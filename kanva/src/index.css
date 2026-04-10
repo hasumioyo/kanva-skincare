@@ -58,6 +58,7 @@
   /* Border radius */
   --border-radius-s: 8px;
   --border-radius-r: 10px;
+  --border-radius-mr: 20px;
   --border-radius-m: 30px;
   --border-radius-l: 20px;
   --border-radius-xl: 25px;
