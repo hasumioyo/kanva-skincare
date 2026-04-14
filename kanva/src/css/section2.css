@@ -1,8 +1,9 @@
 .section-content-2 {
     display: flex;
     flex-direction: column;
-    padding: 70px 20px;
+    padding: 70px 25px;
     gap: 50px;
+   
 }
 
 .section-content-2 .section2-title {
@@ -14,13 +15,42 @@
     display: inline-flex;
     flex-direction: column;
     gap: 10px;
+    cursor: pointer;
+
 }
 
 .section-content-2 .section2-list-product {
-    display: inline-flex;
+    /* display: inline-flex;
     justify-content: space-between;
     width: 1295px;
-    align-self: center;
+    align-self: center; */
+    width: 100%;
+    /* padding: 0px 10px; */
+
+}
+
+.section-content-2 .section2-title-product {
+    font-weight: var(--font-weight-bold);
+    color: var(--900);
+}
+
+.section-content-2 .section2-product-price {
+    font-size: var(--font-size-m);
+    color: var(--900);
+}
+
+.section-content-2 .learn-more {
+    font-size: var(--font-size-n);
+    color: var(--700);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.section-content-2 .learn-more:hover {
+    /* font-size: var(--font-size-n);
+    color: var(--700); */
+    text-decoration: underline;
+    transition: 0.2s ease;
 }
 
 .covers-product {
@@ -33,4 +63,45 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+
+.swiper {
+  width: 100%;
+  /* height: 100%; */
+  overflow: visible !important;
+  padding: 20px 0;
+  z-index: 1;
+  display: block;
+  overflow-x: hidden;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: var(--50);
+  padding: 50px;
+  /* border-radius: var(--border-radius-mr); */
+  /* border: 2px solid var(--500); */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+  
+
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* blue dots */
+.swiper-pagination {
+    bottom: -50px !important;
 }
