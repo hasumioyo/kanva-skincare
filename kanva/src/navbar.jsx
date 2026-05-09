@@ -3,43 +3,58 @@ import { Link, useLocation } from 'react-router-dom';
 import './css/navbar.css';
 import { useEffect, useRef } from 'react';
 import Header from "./home/header";
+import Emptybox from "./shop/emptybox"
+import Shop from './pages/shop';
 
 
 const Navbar = () => {
     const navbarRef = useRef(null);
     const headerRef = useRef(null);
+    const shopRef = useRef(null);
     const locations = useLocation();
 
     useEffect(() => {
         const navbar = navbarRef.current;
         const SectionOne = headerRef.current;
-
-        const SectionOneOptions = {
+        const SectionShop = shopRef.current;
+    
+        const options = {
             rootMargin: "-200px 0px 0px 0px",
             "/": "-200px 0px 0px 0px",
-            "/shop": "-100px 0px 0px 0px",
+            "/shop": "-50px 0px 0px 0px",
         }
 
-        const SectionOneObserver = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function(entries) {
         entries.forEach((entry) => {
             console.log(entry.target);
             if(!entry.isIntersecting) {
                 navbar.classList.add("navbar-scrolldown");
+                
             } else {
                 navbar.classList.remove("navbar-scrolldown");
             }
         });
         
-    }, SectionOneOptions);
+    }, options);
         if (SectionOne) {
-            SectionOneObserver.observe(SectionOne);
+            observer.observe(SectionOne);
+        };
+
+        if (SectionShop) {
+            observer.observe(SectionShop);
         };
 
         return () => {
             if (SectionOne) {
-                SectionOneObserver.unobserve(SectionOne);
+                observer.unobserve(SectionOne);
+            };
+            if (SectionShop) {
+                observer.unobserve(SectionShop);
             }
         };
+
+        
+
     }, [locations.pathname]);
 
     const navbarsrunning = () => {
@@ -47,12 +62,18 @@ const Navbar = () => {
             return <Header ref={headerRef}/>;
         }
         if (locations.pathname === "/shop") {
-            const colornavbar = document.querySelector('.navbar-scrolldown');
-            if(colornavbar) {
-                colornavbar.classList.add('whitening')
-            }
-            return <Header ref={headerRef}/>;
+            return <Emptybox ref={shopRef}/>; //supaya tidak double
+            // const colornavbar = document.querySelector('.navbar-scrolldown');
+            
+            
+            // if(colornavbar) {
+            //     colornavbar.classList.add('whitening')
+            
+            // }
+            // return <Header ref={headerRef}/>;
+            
         }
+
         return null;
     };
 
@@ -65,10 +86,10 @@ const Navbar = () => {
                     <a href="#logo" className='logo-title'>kanva</a>
                 </div>
                 <div className="navbar-nav">
-                    <p className="nav-text">Home</p>
-                    <p className="nav-text">Products</p>
-                    <p className="nav-text">Blog</p>
-                    <p className="nav-text">About Us</p>
+                    <Link to="/" className="nav-text"><p>Home</p></Link>
+                    <Link to="/shop" className="nav-text"><p>Products</p></Link>
+                    <Link to="/blog" className="nav-text"><p>Blog</p></Link>
+                    <Link to="/about-us" className="nav-text"><p>About Us</p></Link>
                 </div>
             </div>
             <div className='nav-1'>

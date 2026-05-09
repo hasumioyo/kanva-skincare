@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 70px 25px;
     gap: 50px;
-   
+    background-color: var(--50);
 }
 
 .section-content-2 .section2-title {
